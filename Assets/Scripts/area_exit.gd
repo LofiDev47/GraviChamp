@@ -17,5 +17,5 @@ func close():
 	sprite.region_rect.position.x = 0
 
 func _on_body_entered(body):
-	if is_open && body is player_controller:
+	if is_open && body is PlayerController:
 		GameManager.next_level()

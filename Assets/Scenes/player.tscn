@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://ddmt8c7maqsqr"]
 
-[ext_resource type="Script" uid="uid://k6aacylqymma" path="res://Assets/Scripts/player_controller.gd" id="1_8v6ty"]
-[ext_resource type="Script" uid="uid://d1pfr2xj4dcd" path="res://Assets/Scripts/player_animator.gd" id="2_1cegp"]
-[ext_resource type="Texture2D" uid="uid://cwgt66qai0xwf" path="res://Assets/Sprites/The Male adventurer - Free/Jump - NEW/Normal/Jump_Right_Down.png" id="3_38rej"]
+[ext_resource type="Script" uid="uid://dwex2ylbydnq8" path="res://Assets/Scripts/player_controller.gd" id="1_8v6ty"]
+[ext_resource type="Script" uid="uid://cu4kbuuifuucy" path="res://Assets/Scripts/player_animator.gd" id="2_1cegp"]
+[ext_resource type="Texture2D" uid="uid://dvnwhb0jn0851" path="res://Assets/Sprites/The Male adventurer - Free/Idle/idle_right_down.png" id="3_38rej"]
 
 [sub_resource type="Animation" id="Animation_6f3ly"]
 length = 0.001
@@ -21,42 +21,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gw21u"]
 resource_name = "fall"
-length = 2.0
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(192, -8, 45, 45), Rect2(240, -3, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 45, 45)]
-}
-
-[sub_resource type="Animation" id="Animation_32pi5"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 45, 45)]
-}
-
-[sub_resource type="Animation" id="Animation_jwch5"]
-resource_name = "jump"
-length = 1.85
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -68,12 +32,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, -3, 45, 45), Rect2(144, -10, 45, 45)]
+"values": [Rect2(192, 0, 45, 45), Rect2(240, -3, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 45, 45)]
 }
 
-[sub_resource type="Animation" id="Animation_gt1i5"]
-resource_name = "move"
-length = 1.85
+[sub_resource type="Animation" id="Animation_32pi5"]
+resource_name = "idle"
+length = 1.75
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -83,10 +47,44 @@ tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.2501, 1.5, 1.75),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_jwch5"]
+resource_name = "jump"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.466667, 0.6, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 45, 45), Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_gt1i5"]
+resource_name = "move"
+length = 1.75
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 1.7501),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 45, 45)]
+"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(0, 16, 16, 16), Rect2(336, 0, 45, 45)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uq15r"]
@@ -99,7 +97,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4c802"]
-radius = 5.0
+radius = 4.0
 height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -114,19 +112,22 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="PlayerAnimator" type="Node2D" parent="."]
+[node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_1cegp")
+player_controller = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_uq15r")
 }
-autoplay = "jump"
+autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator"]
-position = Vector2(-1, -11)
-scale = Vector2(0.593573, 0.559838)
+position = Vector2(-0.97125, -12)
+scale = Vector2(0.709833, 0.577778)
 texture = ExtResource("3_38rej")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
