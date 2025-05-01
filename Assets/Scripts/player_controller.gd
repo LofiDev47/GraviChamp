@@ -7,6 +7,7 @@ class_name PlayerController
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
+var background2 = 1
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0

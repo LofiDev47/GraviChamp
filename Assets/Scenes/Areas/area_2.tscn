@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bivk6aikgy7ic"]
+[gd_scene load_steps=3 format=3 uid="uid://bivk6aikgy7ic"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_mjltc"]
+[ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_y4hc0"]
 
 [node name="Area2" instance=ExtResource("1_mjltc")]
 
@@ -18,3 +19,16 @@ position = Vector2(194, -19)
 
 [node name="EnergyCell4" parent="EnergyCells" index="3"]
 position = Vector2(304, -17)
+
+[node name="Background" type="Sprite2D" parent="." index="5"]
+z_index = -30
+position = Vector2(407, 18)
+scale = Vector2(0.206836, 0.1)
+texture = ExtResource("2_y4hc0")
+
+[node name="Background2" type="Sprite2D" parent="." index="6"]
+z_index = -30
+position = Vector2(-651, 18)
+scale = Vector2(0.206836, 0.1)
+texture = ExtResource("2_y4hc0")
+flip_h = true
