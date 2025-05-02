@@ -1,9 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://3wdt30p5fvhd"]
+[gd_scene load_steps=19 format=3 uid="uid://3wdt30p5fvhd"]
 
 [ext_resource type="Texture2D" uid="uid://cuhuilo03qfkn" path="res://Assets/Sprites/background_1.png" id="1_a47tw"]
+[ext_resource type="Script" uid="uid://b0sp2mq28mb24" path="res://Assets/Scenes/earth_animator.gd" id="2_6hsw6"]
 [ext_resource type="Script" uid="uid://dey0mnq8nr7rd" path="res://Assets/Scenes/Earth_Shake.gd" id="2_c2bxp"]
 [ext_resource type="Texture2D" uid="uid://bids2ep54c11t" path="res://Assets/Sprites/Earth.png" id="2_mt807"]
 [ext_resource type="Texture2D" uid="uid://vispq5eamcu" path="res://Assets/Sprites/Kla'ed - Dreadnought - Base.png" id="3_c2bxp"]
+[ext_resource type="Script" uid="uid://di3pdg4f856pf" path="res://Assets/Scenes/ship_animator.gd" id="5_6hsw6"]
+[ext_resource type="AudioStream" uid="uid://bcgtcsbsjdmf3" path="res://Assets/Sounds/accident-crash-sound-effect-made-with-Voicemod.mp3" id="7_lvnc4"]
 
 [sub_resource type="Animation" id="Animation_6f3ly"]
 length = 0.001
@@ -86,6 +89,8 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_a47tw"]
+length = 2.75
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -93,7 +98,7 @@ tracks/0/path = NodePath("EarthAnimator/SpritePooDee:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.26667, 2.5, 2.76667),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.26667, 2.5, 2.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Rect2(0, 0, 100, 100), Rect2(0.5, 0, 100, 100), Rect2(0, 0.5, 100, 100), Rect2(0, 0, 100, 100), Rect2(0.5, 0, 100, 100), Rect2(0, 0.5, 100, 100), Rect2(0, 0, 100, 100), Rect2(0.5, 0, 100, 100), Rect2(0, 0.5, 100, 100), Rect2(0, 0, 100, 100), Rect2(0.5, 0, 100, 100), Rect2(0, 0.5, 100, 100)]
@@ -148,6 +153,7 @@ scale = Vector2(2, 2.059)
 texture = ExtResource("1_a47tw")
 
 [node name="EarthAnimator" type="Node2D" parent="."]
+script = ExtResource("2_6hsw6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EarthAnimator"]
 root_node = NodePath("../..")
@@ -166,6 +172,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
 
 [node name="ShipAnimator" type="Node2D" parent="."]
+script = ExtResource("5_6hsw6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ShipAnimator"]
 root_node = NodePath("../..")
@@ -183,5 +190,8 @@ scale = Vector2(2.695, 2.7175)
 texture = ExtResource("3_c2bxp")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="ShipAnimator"]
+stream = ExtResource("7_lvnc4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
