@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://3wdt30p5fvhd"]
+[gd_scene load_steps=11 format=3 uid="uid://3wdt30p5fvhd"]
 
 [ext_resource type="Texture2D" uid="uid://cuhuilo03qfkn" path="res://Assets/Sprites/background_1.png" id="1_a47tw"]
 [ext_resource type="Script" uid="uid://b0sp2mq28mb24" path="res://Assets/Scenes/earth_animator.gd" id="2_6hsw6"]
@@ -7,86 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://vispq5eamcu" path="res://Assets/Sprites/Kla'ed - Dreadnought - Base.png" id="3_c2bxp"]
 [ext_resource type="Script" uid="uid://di3pdg4f856pf" path="res://Assets/Scenes/ship_animator.gd" id="5_6hsw6"]
 [ext_resource type="AudioStream" uid="uid://bcgtcsbsjdmf3" path="res://Assets/Sounds/accident-crash-sound-effect-made-with-Voicemod.mp3" id="7_lvnc4"]
-
-[sub_resource type="Animation" id="Animation_6f3ly"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_gw21u"]
-resource_name = "fall"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(192, 0, 45, 45), Rect2(240, -3, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 45, 45)]
-}
-
-[sub_resource type="Animation" id="Animation_32pi5"]
-resource_name = "idle"
-length = 1.75
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(336, 0, 16, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_jwch5"]
-resource_name = "jump"
-length = 1.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.466667, 0.6, 1.03333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45)]
-}
-
-[sub_resource type="Animation" id="Animation_gt1i5"]
-resource_name = "move"
-length = 1.75
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 1.7501),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(0, 0, 45, 45), Rect2(48, 0, 45, 45), Rect2(96, 0, 45, 45), Rect2(144, 0, 45, 45), Rect2(192, 0, 45, 45), Rect2(240, 0, 45, 45), Rect2(288, 0, 45, 45), Rect2(0, 16, 16, 16), Rect2(336, 0, 45, 45)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uq15r"]
-_data = {
-&"RESET": SubResource("Animation_6f3ly"),
-&"fall": SubResource("Animation_gw21u"),
-&"idle": SubResource("Animation_32pi5"),
-&"jump": SubResource("Animation_jwch5"),
-&"move": SubResource("Animation_gt1i5")
-}
 
 [sub_resource type="Animation" id="Animation_a47tw"]
 length = 2.75
@@ -125,26 +45,6 @@ _data = {
 &"Shipy": SubResource("Animation_mt807")
 }
 
-[sub_resource type="Animation" id="Animation_c2bxp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ShipAnimator/SpriteCranberry:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 100, 100)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hsw6"]
-_data = {
-&"RESET": SubResource("Animation_c2bxp")
-}
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -158,7 +58,6 @@ script = ExtResource("2_6hsw6")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EarthAnimator"]
 root_node = NodePath("../..")
 libraries = {
-&"": SubResource("AnimationLibrary_uq15r"),
 &"Planet": SubResource("AnimationLibrary_pmpwj")
 }
 script = ExtResource("2_c2bxp")
@@ -177,9 +76,7 @@ script = ExtResource("5_6hsw6")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ShipAnimator"]
 root_node = NodePath("../..")
 libraries = {
-&"": SubResource("AnimationLibrary_6hsw6"),
-&"Intro Scene": SubResource("AnimationLibrary_pmpwj"),
-&"Player Animations": SubResource("AnimationLibrary_uq15r")
+&"Intro Scene": SubResource("AnimationLibrary_pmpwj")
 }
 autoplay = "Player Animations/RESET"
 
