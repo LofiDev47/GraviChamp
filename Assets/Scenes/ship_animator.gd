@@ -6,9 +6,11 @@ extends Node2D
 
 func _ready():
 	anim_player.animation_finished.connect(_on_animation_finished)
-	anim_player.play("Intro Scene/Shakey")  # 👈 Play the correct animation name
+	anim_player.play("Crash")  # 👈 Play the correct animation name
 
 func _on_animation_finished(anim_name: StringName):
-	if anim_name == "Intro Scene/Shakey":  # 👈 Check exact match
+	if anim_name == "Crash":  # 👈 Check exact match
 		$AudioStreamPlayer.stream = sound
 		$AudioStreamPlayer.play()
+		await get_tree().create_timer(2.0).timeout
+		anim_player.play("Reverse")
