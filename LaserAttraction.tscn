@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvecqrxnu6y7o"]
+
+[ext_resource type="Script" uid="uid://bpfmuc6fxvan7" path="res://laser_attraction.gd" id="1_8hhuq"]
+[ext_resource type="Texture2D" uid="uid://c8ghirnixcqd" path="res://icon.svg" id="2_ah1mf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05mnm"]
+size = Vector2(130, 80)
+
+[node name="LaserAttraction" type="Area2D"]
+script = ExtResource("1_8hhuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1, 0.609375)
+texture = ExtResource("2_ah1mf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_05mnm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+lifetime = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
