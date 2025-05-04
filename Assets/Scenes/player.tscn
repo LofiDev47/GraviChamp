@@ -104,6 +104,7 @@ height = 14.0
 collision_mask = 768
 script = ExtResource("1_8v6ty")
 speed = 4.0
+jump_power = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -15)
@@ -134,3 +135,5 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_4c802")
+
+[node name="GunPosition" type="Marker2D" parent="."]
