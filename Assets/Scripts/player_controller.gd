@@ -3,14 +3,11 @@ class_name PlayerController
 
 @export var speed = 10.0
 @export var jump_power = 10.0
-@export var max_health := 3
-
 
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
 var background2 = 1
-var current_health := max_health
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -43,15 +40,4 @@ func _physics_process(delta):
 	else:           
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 
-	move_and_slide() 
-	
-	func take_damage(amount: int):
-		current_health -= amount
-		$AnimationPlayer.play("hurt_flash")  # Visual feedback
-	
-	if current_health <= 0:
-		die()
-
-func die():
-	# Game over logic here
-	get_tree().reload_current_scene()  # Simple respawn
+	move_and_slide()

@@ -1,0 +1,148 @@
+[gd_scene load_steps=15 format=3 uid="uid://bsa5httmr30kb"]
+
+[ext_resource type="Texture2D" uid="uid://cuhuilo03qfkn" path="res://Assets/Sprites/background_1.png" id="1_87sv6"]
+[ext_resource type="Script" uid="uid://b0sp2mq28mb24" path="res://Assets/Scenes/earth_animator.gd" id="2_nxdwf"]
+[ext_resource type="Script" uid="uid://dey0mnq8nr7rd" path="res://Assets/Scenes/Earth_Shake.gd" id="3_4ynnf"]
+[ext_resource type="Texture2D" uid="uid://bids2ep54c11t" path="res://Assets/Sprites/Earth.png" id="4_qqe7p"]
+[ext_resource type="Script" uid="uid://di3pdg4f856pf" path="res://Assets/Scenes/ship_animator.gd" id="5_dfdlo"]
+[ext_resource type="Texture2D" uid="uid://vispq5eamcu" path="res://Assets/Sprites/Kla'ed - Dreadnought - Base.png" id="6_bcb5n"]
+[ext_resource type="AudioStream" uid="uid://bcgtcsbsjdmf3" path="res://Assets/Sounds/accident-crash-sound-effect-made-with-Voicemod.mp3" id="7_5kuo4"]
+
+[sub_resource type="Animation" id="Animation_oouwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EarthAnimator/SpritePooDee:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 100, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_74k18"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EarthAnimator/SpritePooDee:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 100, 100), Rect2(2.5, 0, 100, 100), Rect2(0, 2.5, 100, 100), Rect2(0, 0, 100, 100), Rect2(2.5, 0, 100, 100), Rect2(0, 2.5, 100, 100), Rect2(2.5, 2.5, 100, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmpwj"]
+_data = {
+&"RESET": SubResource("Animation_oouwl"),
+&"Shake": SubResource("Animation_74k18")
+}
+
+[sub_resource type="Animation" id="Animation_6hsw6"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShipAnimator/SpriteCranberry:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, -87, 100, 100), Rect2(0, 22, 100, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_lvnc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShipAnimator/SpriteCranberry:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 22, 100, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_pmpwj"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShipAnimator/SpriteCranberry:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 22, 100, 100), Rect2(0, -87, 100, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74k18"]
+_data = {
+&"Crash": SubResource("Animation_6hsw6"),
+&"RESET": SubResource("Animation_lvnc4"),
+&"Reverse": SubResource("Animation_pmpwj")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2210
+position = Vector2(-1.00003, 2)
+scale = Vector2(4.50781, 2.875)
+texture = ExtResource("1_87sv6")
+
+[node name="EarthAnimator" type="Node2D" parent="."]
+script = ExtResource("2_nxdwf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EarthAnimator"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_pmpwj")
+}
+script = ExtResource("3_4ynnf")
+
+[node name="SpritePooDee" type="Sprite2D" parent="EarthAnimator"]
+z_index = 100
+position = Vector2(47, 42)
+scale = Vector2(2.695, 2.695)
+texture = ExtResource("4_qqe7p")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="ShipAnimator" type="Node2D" parent="."]
+script = ExtResource("5_dfdlo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShipAnimator"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_74k18")
+}
+autoplay = "Player Animations/RESET"
+
+[node name="SpriteCranberry" type="Sprite2D" parent="ShipAnimator"]
+z_index = 100
+position = Vector2(-56, 191)
+scale = Vector2(2.695, 2.7175)
+texture = ExtResource("6_bcb5n")
+region_enabled = true
+region_rect = Rect2(0, 22, 100, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="ShipAnimator"]
+position = Vector2(-3.8147e-06, 0)
+stream = ExtResource("7_5kuo4")
+volume_db = 9.579
+
+[node name="Camera2D" type="Camera2D" parent="."]

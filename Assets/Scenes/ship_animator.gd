@@ -14,3 +14,5 @@ func _on_animation_finished(anim_name: StringName):
 		$AudioStreamPlayer.play()
 		await get_tree().create_timer(2.0).timeout
 		anim_player.play("Reverse")
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://Assets/Scenes/EarthDialogue.tscn")

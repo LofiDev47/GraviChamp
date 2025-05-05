@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bgso2tqkim1vh"
+path="res://.godot/imported/Earth Help.dialogue-b1d528b929de59c3f98e3bf496c58ea6.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogue/Earth Help.dialogue"
+dest_files=["res://.godot/imported/Earth Help.dialogue-b1d528b929de59c3f98e3bf496c58ea6.tres"]
+
+[params]
+
+defaults=true

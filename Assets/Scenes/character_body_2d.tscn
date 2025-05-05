@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4ndw2o4xtdpo"]
+
+[ext_resource type="Script" uid="uid://bwmleqqtkvw3s" path="res://Assets/Scripts/SimpleEnemy.gd" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://b0to8im60p0h8" path="res://Assets/Sprites/Slime Sprites.png" id="2_g5ct4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36gbj"]
+
+[sub_resource type="Animation" id="Animation_cyjxs"]
+resource_name = "Idle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(5, -5, 20, 25), Rect2(29, -5, 20, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_w6rtk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fs6t3"]
+_data = {
+&"Idle": SubResource("Animation_cyjxs"),
+&"RESET": SubResource("Animation_w6rtk")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_f50pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_36gbj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(1.395, 1.395)
+texture = ExtResource("2_g5ct4")
+region_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fs6t3")
+}
