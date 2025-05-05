@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs3u0o64oe58x"]
+
+[ext_resource type="Texture2D" uid="uid://cuhuilo03qfkn" path="res://Assets/Sprites/background_1.png" id="1_sodm7"]
+[ext_resource type="Script" uid="uid://bc6ysngcevmaa" path="res://earth_Repair.gd" id="2_bghcx"]
+[ext_resource type="Texture2D" uid="uid://bcfjlplqpkpep" path="res://Assets/Sprites/ShatteredEarth.png" id="3_sodm7"]
+[ext_resource type="AudioStream" uid="uid://dy31bx4rky27" path="res://Assets/Sounds/yippee-tbh.mp3" id="4_bghcx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2210
+position = Vector2(-1.00003, 2)
+scale = Vector2(4.50781, 2.875)
+texture = ExtResource("1_sodm7")
+
+[node name="EarthAnimator" type="Node2D" parent="."]
+script = ExtResource("2_bghcx")
+
+[node name="SpritePooDee" type="Sprite2D" parent="EarthAnimator"]
+z_index = 100
+position = Vector2(47, 42)
+scale = Vector2(2.695, 2.695)
+texture = ExtResource("3_sodm7")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="EarthAnimator"]
+stream = ExtResource("4_bghcx")
+
+[node name="Camera2D" type="Camera2D" parent="."]

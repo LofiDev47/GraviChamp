@@ -7,7 +7,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5ap7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pegy"]
 texture = SubResource("CompressedTexture2D_e8ha6")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -326,7 +326,7 @@ terrain_set_0/terrain_0/name = "one_way_ground"
 terrain_set_0/terrain_0/color = Color(0.1974, 0.47, 0.233747, 1)
 terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_y5ap7")
+sources/0 = SubResource("TileSetAtlasSource_2pegy")
 
 [node name="AreaTemplate" type="Node2D"]
 

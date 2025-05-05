@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://d14vcwonqahq2"]
+
+[ext_resource type="Script" uid="uid://x3kyr1x05tgw" path="res://credits.gd" id="1_kxrwr"]
+[ext_resource type="AudioStream" uid="uid://bdbimvenkwmbs" path="res://Assets/Sounds/Wanderer's Tale.mp3" id="2_4n50d"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kxrwr")
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VScrollBar"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 643.0
+bbcode_enabled = true
+text = "[center]
+[b]My Awesome Game[/b]
+by LofiDev47
+
+Special Thanks:
+- Atanih820
+- grayson
+- Godot Engine
+
+Music by:
+- PizzaDoggy on itch
+
+Assets by:
+- foozlecc on itch
+- sscary on itch
+
+
+[wave amp=30 freq=4]Thank you for playing![/wave]
+
+(ps please come back dani)
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4n50d")
