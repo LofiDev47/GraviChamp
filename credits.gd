@@ -61,4 +61,4 @@ func animate_scrolling():
 func end_credits():
 	if music_player:
 		music_player.stop()
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().change_scene_to_file("res://Assets/Scenes/menu.tscn")

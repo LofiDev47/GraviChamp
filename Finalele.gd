@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @export var messages := [
 	"Earth: YOU FOUND IT!",
-	"Earth: Alright all you eed to do now is insert the batterys",
+	"Earth: Alright all you need to do now is insert the batterys",
 	"Player: I think I can do that",
 ]
 var current_message := 0

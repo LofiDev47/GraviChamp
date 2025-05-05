@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://da16dn2kenjg4"]
+[gd_scene load_steps=4 format=3 uid="uid://da16dn2kenjg4"]
 
 [ext_resource type="Script" uid="uid://dl5b3lm6nodt7" path="res://Finalele.gd" id="1_lw8ys"]
 [ext_resource type="Texture2D" uid="uid://ceqdlyquasf8t" path="res://Assets/Sprites/engine.png" id="2_i4aeg"]
+[ext_resource type="AudioStream" uid="uid://cbh0tixubto5f" path="res://Assets/Sounds/Golden Gleam.mp3" id="3_i4aeg"]
 
 [node name="root" type="CanvasLayer"]
 script = ExtResource("1_lw8ys")
@@ -32,5 +33,9 @@ texture = ExtResource("2_i4aeg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(613, 234)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i4aeg")
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

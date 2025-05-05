@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://46pml4o1fbob"]
+[gd_scene load_steps=10 format=4 uid="uid://46pml4o1fbob"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_3ut05"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_3uyhe"]
 [ext_resource type="Script" uid="uid://fmibmm4etq5r" path="res://Assets/Scenes/Areas/background_2.gd" id="3_8wi1m"]
+[ext_resource type="AudioStream" uid="uid://cr0xj0jtkvv6g" path="res://Assets/Sounds/Floating Dream.mp3" id="4_ql8qi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -389,3 +390,7 @@ offset_top = -89.0
 offset_right = 204.0
 offset_bottom = -66.0
 text = "Space to jump"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+stream = ExtResource("4_ql8qi")
+autoplay = true

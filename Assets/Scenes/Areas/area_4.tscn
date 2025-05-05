@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c5g8uft7oq3bw"]
+[gd_scene load_steps=8 format=4 uid="uid://c5g8uft7oq3bw"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_njbvn"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_sylkb"]
 [ext_resource type="Script" uid="uid://fmibmm4etq5r" path="res://Assets/Scenes/Areas/background_2.gd" id="3_o4i0f"]
+[ext_resource type="AudioStream" uid="uid://b0s0rnbomcdvd" path="res://Assets/Sounds/Whispering Woods.mp3" id="4_sylkb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -380,3 +381,7 @@ scale = Vector2(0.206836, 0.1)
 texture = ExtResource("2_sylkb")
 flip_h = true
 script = ExtResource("3_o4i0f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("4_sylkb")
+autoplay = true

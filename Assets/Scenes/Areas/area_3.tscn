@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dtxjcykeukjp4"]
+[gd_scene load_steps=7 format=4 uid="uid://dtxjcykeukjp4"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_q4ekm"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_oww6v"]
+[ext_resource type="AudioStream" uid="uid://bauxqrrpn83om" path="res://Assets/Sounds/Sunlight Through Leaves.mp3" id="3_oww6v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -372,3 +373,7 @@ position = Vector2(-650, 11)
 scale = Vector2(0.206836, 0.1)
 texture = ExtResource("2_oww6v")
 flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("3_oww6v")
+autoplay = true

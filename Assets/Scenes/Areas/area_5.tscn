@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://8r2xb7aq3itq"]
+[gd_scene load_steps=7 format=4 uid="uid://8r2xb7aq3itq"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_rsdsv"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_0g0nh"]
+[ext_resource type="AudioStream" uid="uid://be6uquu6lgtc8" path="res://Assets/Sounds/Evening Harmony.mp3" id="3_0g0nh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -372,3 +373,7 @@ position = Vector2(-616, -92)
 scale = Vector2(0.206836, 0.1)
 texture = ExtResource("2_0g0nh")
 flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("3_0g0nh")
+autoplay = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://bivk6aikgy7ic"]
+[gd_scene load_steps=7 format=4 uid="uid://bivk6aikgy7ic"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_mjltc"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_y4hc0"]
+[ext_resource type="AudioStream" uid="uid://b86yma322yffv" path="res://Assets/Sounds/Polar Lights.mp3" id="3_fsu62"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -362,3 +363,7 @@ position = Vector2(-651, 18)
 scale = Vector2(0.206836, 0.1)
 texture = ExtResource("2_y4hc0")
 flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("3_fsu62")
+autoplay = true

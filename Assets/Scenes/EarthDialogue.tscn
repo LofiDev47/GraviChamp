@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvnk0wplr388a"]
+[gd_scene load_steps=3 format=3 uid="uid://bvnk0wplr388a"]
 
 [ext_resource type="Script" uid="uid://b7bse08nuyyqp" path="res://root.gd" id="1_rgyop"]
+[ext_resource type="AudioStream" uid="uid://cbh0tixubto5f" path="res://Assets/Sounds/Golden Gleam.mp3" id="2_fi2yb"]
 
 [node name="root" type="CanvasLayer"]
 script = ExtResource("1_rgyop")
@@ -22,5 +23,9 @@ layout_mode = 2
 [node name="Continue" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "Continue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fi2yb")
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

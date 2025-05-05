@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://b0r20vkkb6luh"]
+[gd_scene load_steps=9 format=4 uid="uid://b0r20vkkb6luh"]
 
 [ext_resource type="PackedScene" uid="uid://dxgd57qor82jm" path="res://Assets/Scenes/Area Functionality/area_template.tscn" id="1_4jut5"]
 [ext_resource type="Texture2D" uid="uid://bwfgyiign88qx" path="res://Assets/Sprites/background_01.jpg" id="2_sc5ux"]
 [ext_resource type="Script" uid="uid://fmibmm4etq5r" path="res://Assets/Scenes/Areas/background_2.gd" id="3_hyqe3"]
 [ext_resource type="Texture2D" uid="uid://ceqdlyquasf8t" path="res://Assets/Sprites/engine.png" id="4_an3c8"]
+[ext_resource type="AudioStream" uid="uid://b86yma322yffv" path="res://Assets/Sounds/Polar Lights.mp3" id="5_sc5ux"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8ha6"]
 load_path = "res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
@@ -387,3 +388,7 @@ script = ExtResource("3_hyqe3")
 z_index = -10
 position = Vector2(273, -43)
 texture = ExtResource("4_an3c8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("5_sc5ux")
+autoplay = true
